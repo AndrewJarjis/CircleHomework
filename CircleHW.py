@@ -2,6 +2,8 @@ import math
 
 print('Welcome to my Circle Tester!')
 
+
+
 class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -22,6 +24,18 @@ class Circle:
         return self.radius
 
 
+class Validator:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def is_valid_radius(self, radius_s):
+        if radius_s.replace(".", "", 1).isdigit():
+            radius = float(radius_s)
+            if radius > 0:
+                return True
+        return False
+
+
 while True:
     radius_str = input("Please enter the radius of the circle: ")
     if radius_str.replace(".", "", 1).isdigit():
@@ -30,6 +44,7 @@ while True:
     else:
         print("Invalid input. Please enter a valid number.")
 
+my_validator = Validator(radius)
 my_circle = Circle(radius)
 
 print("Diameter: {}".format(my_circle.calculate_diameter()))
