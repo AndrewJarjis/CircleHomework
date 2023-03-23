@@ -1,5 +1,6 @@
 import math
 
+print('Welcome to my Circle Tester!')
 
 class Circle:
     def __init__(self, radius):
